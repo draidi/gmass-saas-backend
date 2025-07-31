@@ -1,4 +1,4 @@
 flask
 python-dotenv
-redis
-supabase-py
+redis==4.6.0
+supabase
