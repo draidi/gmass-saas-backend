@@ -16,6 +16,6 @@ app.register_blueprint(api_bp, url_prefix='/api')
 def index():
     return {'status': '✅ GMass SaaS Backend is Running'}
 
-# Start the server
+# Start the server (use Railway-provided port)
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
