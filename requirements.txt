@@ -1,5 +1,5 @@
 flask==3.0.1
 python-dotenv==1.0.1
-redis==4.6.0
-supabase==1.0.3
-rq==1.14.1
+redis==4.6.1
+rq==1.15.1
+supabase==2.0.3
