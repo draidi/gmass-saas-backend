@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from supabase import create_client
 import os
-import redis
+from redis import Redis
 from rq import Queue
 from dotenv import load_dotenv
 
@@ -14,7 +14,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 REDIS_URL = os.getenv("REDIS_URL")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-redis_conn = redis.from_url(REDIS_URL)
+redis_conn = Redis.from_url(REDIS_URL)  # ✅ Fixed line
 queue = Queue(connection=redis_conn)
 
 bp = Blueprint("api", __name__)
